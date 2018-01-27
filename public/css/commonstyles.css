@@ -1,13 +1,54 @@
+.main {
+    background-color: #333;
+}
 
-#planet-scope {
+.ambassador-dialog {
+    background-color:cyan;
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius: 25px;
+    padding:5px;
+    padding-bottom:20px;
+}
+
+.ambassador-avatar {
+    display:inline-block;
+    /*background-image: url("/img/circle1.png");*/
+    background-color: rgba(0,0,0,0.5);
+    background-size: cover;
+    border-radius:12px;
+    width:100px;
+    height:100px;
+}
+
+.ambassador-text {
+    display:inline-block;
+    /*height:100px;*/
+}
+
+#planet-radar {
     border: 1px solid black;
+    border-radius: 25px;
     width:100%;
 }
 
+.resources-title {
+    padding:0px 15px;
+}
+
+.resource-list {
+    background-color:cyan;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    padding-top:10px;
+}
+
 .resource-card {
-    border: 1px solid black;
-    width:50px;
+    background-color:magenta;
+    border-radius:20px;
+    margin:5px;
+    width:60px;
     height:80px;
+    display:inline-block;
 }
 
 .resource-pic {
@@ -15,4 +56,12 @@
     width: 40px;
     height:40px;
     margin:5px;
+}
+
+.selected {
+    border: 3px solid red;
+}
+
+.assets {
+    /*display: none;*/
 }
