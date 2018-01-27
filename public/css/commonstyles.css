@@ -1,0 +1,18 @@
+
+#planet-scope {
+    border: 1px solid black;
+    width:100%;
+}
+
+.resource-card {
+    border: 1px solid black;
+    width:50px;
+    height:80px;
+}
+
+.resource-pic {
+    border: 1px solid black;
+    width: 40px;
+    height:40px;
+    margin:5px;
+}
