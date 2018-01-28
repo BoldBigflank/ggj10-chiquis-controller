@@ -14,9 +14,10 @@ findAvailableConnections = function (originalPlayer) {
         if (connections[originalPlayer] && connections[originalPlayer].indexOf(playerName) !== -1) continue;
         var playerConnections = connections[playerName] || [];
 
-        if (playerConnections.length < MAX_CONNECTIONS) {
-            result.push(playerName);
+        if (playerConnections.length >= MAX_CONNECTIONS) {
+            continue;
         }
+        result.push(playerName);
     }
     return result;
 };

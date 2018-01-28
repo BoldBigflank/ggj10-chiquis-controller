@@ -42,10 +42,11 @@
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
     padding-top:10px;
+    min-height: 100px;
 }
 
 .resource-card {
-    background-color:magenta;
+    background-color:#2a0040;
     border: 3px solid black;
     border-radius:20px;
     margin:5px;
