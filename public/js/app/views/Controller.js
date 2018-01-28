@@ -15,7 +15,7 @@ define(
         // Socket.io stuff
         var socket;
 
-        var resourceTemplate = '<div class="resource-card" data-id="<%= id %>"><div class="resource-pic"><%= type %></div><div class="resource-quantity"><%= count %></div></div>';
+        var resourceTemplate = '<div class="resource-card <%=type%>" data-id="<%= id %>"><div class="resource-quantity"><%= count %></div></div>';
 
         var View = Backbone.View.extend({
             // The DOM Element associated with this view
@@ -102,11 +102,19 @@ define(
                     },
                     resources: [{
                         id: 0,
-                        type: "food",
+                        type: "medicine",
                         count: 1
                     }, {
                         id: 1,
-                        type: "medicine",
+                        type: "money",
+                        count: 2
+                    }, {
+                        id: 2,
+                        type: "oxygen",
+                        count: 2
+                    }, {
+                        id: 3,
+                        type: "food",
                         count: 2
                     }]
                 });
@@ -209,8 +217,8 @@ define(
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 
                 // Background image
-                ctx.fillStyle = "black";
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                // ctx.fillStyle = "black";
+                // ctx.fillRect(0, 0, canvas.width, canvas.height);
 
                 // Background circle
                 ctx.strokeStyle="white";

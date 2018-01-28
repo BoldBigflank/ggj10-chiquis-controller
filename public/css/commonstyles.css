@@ -28,7 +28,10 @@
 }
 
 #planet-radar {
-    border: 1px solid black;
+    background-image: url("/img/background.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
     border-radius: 25px;
     width:100%;
 }
@@ -47,12 +50,30 @@
 
 .resource-card {
     background-color:#2a0040;
+    background-size:cover;
+    background-position:center;
     border: 3px solid black;
     border-radius:20px;
     margin:5px;
     width:60px;
     height:80px;
     display:inline-block;
+}
+
+.resource-card.food {
+    background-image:url("/img/resources/food.png");
+}
+
+.resource-card.medicine {
+    background-image:url("/img/resources/medicine.png");
+}
+
+.resource-card.oxygen {
+    background-image:url("/img/resources/oxygen.png");
+}
+
+.resource-card.money {
+    background-image:url("/img/resources/money.png");
 }
 
 .resource-pic {
