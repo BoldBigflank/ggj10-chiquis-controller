@@ -15,6 +15,8 @@ define(
         // Socket.io stuff
         var socket;
 
+        var resourceTemplate = '<div class="resource-card"><div class="resource-pic"><%= type %></div><div class="resource-quantity"><%= count %></div></div>';
+
         var View = Backbone.View.extend({
             // The DOM Element associated with this view
             el: ".example",
@@ -26,7 +28,6 @@ define(
                         name: "style",
                         observe: "planet",
                         onGet: function (val) {
-                            console.log("val", val);
                             return "background-image: url('/img/" + val.avatar + ".png');"
                         }
                     }]
@@ -36,6 +37,17 @@ define(
                     onGet: function (val) {
                         if (!val || val.length == 0) return;
                         return val[0].text;
+                    }
+                },
+                ".resource-cards": {
+                    observe: "resources",
+                    updateMethod: "html",
+                    onGet: function (val) {
+                        var result = "";
+                        for (let i = 0; i < val.length; i++) {
+                            result += _.template(resourceTemplate, val[i]);
+                        }
+                        return result;
                     }
                 }
             },
@@ -54,9 +66,35 @@ define(
                         },
                         avatar: "circle"
                     },
+                    connections: [{
+                        type: "red-circle",
+                        location: {
+                            x: 0,
+                            y: 0
+                        }
+                    }, {
+                        type: "blue-cube",
+                        location: {
+                            x: 150,
+                            y: 0
+                        }
+                    }, {
+                        type: "green-donut",
+                        location: {
+                            x: 75,
+                            y: 300
+                        }
+                    }],
                     messages: [{
                         emotion: "happy",
                         text: "Hello!"
+                    }],
+                    resources: [{
+                        type: "food",
+                        count: 1
+                    }, {
+                        type: "medicine",
+                        count: 2
                     }]
                 });
 
@@ -98,7 +136,6 @@ define(
                 }
             },
             selectResource: function (evt) {
-                console.log("selected resource");
                 evt.preventDefault();
                 $(".resource-card").removeClass("selected");
                 $(evt.currentTarget).addClass("selected");
@@ -129,8 +166,11 @@ define(
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 
                 // Background image
+                ctx.fillStyle = "black";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
 
                 // Background circle
+                ctx.strokeStyle="white";
                 ctx.beginPath();
                 ctx.arc(150,150,125, 0,2*Math.PI);
                 ctx.stroke();
@@ -143,7 +183,16 @@ define(
                 imageObj.src = 'img/icon.png';
 
                 // Perimeter planets
+                var connections = this.model.get("connections");
+                for (let i = 0; i < connections.length; i++) {
+                    const imageObj = new Image();
+                    imageObj.onload = function() {
 
+                        ctx.drawImage(imageObj, 125, 125, 50, 50);
+                    };
+                    imageObj.src = 'img/icon.png';
+
+                }
                 
             }
         });

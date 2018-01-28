@@ -1,5 +1,7 @@
 .main {
     background-color: #333;
+    margin: 0px auto;
+    max-width: 480px;
 }
 
 .ambassador-dialog {
@@ -44,6 +46,7 @@
 
 .resource-card {
     background-color:magenta;
+    border: 3px solid black;
     border-radius:20px;
     margin:5px;
     width:60px;
