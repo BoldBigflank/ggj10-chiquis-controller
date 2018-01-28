@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'voyager_grotesque_lightRg';
+    src: url('/fonts/vegerlight-webfont.woff2') format('woff2'),
+         url('/fonts/vegerlight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body, p, div, span {
+    font-family: "voyager_grotesque_lightRg";
+    text-transform:uppercase;
+}
+
 .main {
     background-color: #333;
     margin: 0px auto;
@@ -24,7 +38,13 @@
 
 .ambassador-text {
     display:inline-block;
+    font-size:24px;
     /*height:100px;*/
+}
+
+.crisis-text {
+    font-weight: 700;
+    font-size:24px;
 }
 
 #planet-radar {
