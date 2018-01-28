@@ -24,12 +24,14 @@ require.config({
       // Plugins
       // -------
       "backbone.validateAll": "../libs/plugins/Backbone.validateAll",
+      "backbone.stickit": "../libs/plugins/backbone.stickit",
 
       "bootstrap": "../libs/plugins/bootstrap",
 
       "text": "../libs/plugins/text",
 
-      "jasminejquery": "../libs/plugins/jasmine-jquery"
+      "jasminejquery": "../libs/plugins/jasmine-jquery",
+      "socket.io": "../libs/socket.io",
 
   },
 
@@ -47,6 +49,7 @@ require.config({
 
       // Backbone.validateAll plugin that depends on Backbone
       "backbone.validateAll": ["backbone"],
+      "backbone.stickit": ["backbone"],
 
       // Jasmine-jQuery plugin
       "jasminejquery": ["jquery"]
