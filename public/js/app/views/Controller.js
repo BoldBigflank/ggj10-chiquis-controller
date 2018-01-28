@@ -243,7 +243,7 @@ define(
                     normal.x /= len;
                     normal.y /= len;
                     imageObj.xPos = 150 + normal.x * 125;
-                    imageObj.yPos = 150 + normal.y * 125;
+                    imageObj.yPos = 300 - (150 + normal.y * 125);
                     imageObj.src = 'img/planets/' + connections[i].type + '.png';
 
                     this.radar.push({
