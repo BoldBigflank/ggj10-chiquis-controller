@@ -39,6 +39,13 @@ define(
                         return val[0].text;
                     }
                 },
+                ".crisis-text": {
+                    observe: "crisis",
+                    onGet: function (val) {
+                        if (!val || !val.type) return;
+                        return "Need " + val.count + " " + val.type
+                    }
+                },
                 ".resource-cards": {
                     observe: "resources",
                     updateMethod: "html",
@@ -61,6 +68,7 @@ define(
                     name: "choose name",
 
                     // Debug stuff
+
                     planet: {
                         id: 1234432,
                         x: 150,
@@ -88,6 +96,10 @@ define(
                         emotion: "happy",
                         text: "We're out of food!"
                     }],
+                    crisis: {
+                        type: "food",
+                        count: 1
+                    },
                     resources: [{
                         id: 0,
                         type: "food",
